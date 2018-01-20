@@ -29,7 +29,7 @@ object Form2: TForm2
     object Image1: TImage
       Left = 8
       Top = 27
-      Width = 281
+      Width = 280
       Height = 230
     end
   end
@@ -38,6 +38,7 @@ object Form2: TForm2
     Top = 8
     Width = 227
     Height = 294
+    BorderWidth = 5
     TabOrder = 1
     object Label2: TLabel
       Left = 16
@@ -48,101 +49,91 @@ object Form2: TForm2
     end
     object Label3: TLabel
       Left = 16
-      Top = 58
+      Top = 36
       Width = 31
       Height = 13
       Caption = 'Name:'
     end
     object Label4: TLabel
       Left = 16
-      Top = 112
+      Top = 72
       Width = 29
       Height = 13
       Caption = 'Color:'
     end
     object Label5: TLabel
       Left = 16
-      Top = 192
+      Top = 144
       Width = 55
       Height = 13
       Caption = 'Proportions'
     end
     object Label6: TLabel
       Left = 16
-      Top = 220
+      Top = 172
       Width = 32
       Height = 13
       Caption = 'Width:'
     end
     object Label7: TLabel
       Left = 16
-      Top = 260
+      Top = 212
       Width = 35
       Height = 13
       Caption = 'Height:'
     end
     object Edit1: TEdit
       Left = 88
-      Top = 55
+      Top = 33
       Width = 121
       Height = 21
       TabOrder = 0
+      OnChange = Edit1Change
     end
     object Edit2: TEdit
       Left = 88
-      Top = 217
+      Top = 169
       Width = 121
       Height = 21
       TabOrder = 1
+      OnChange = Edit2Change
     end
     object Edit3: TEdit
       Left = 88
-      Top = 257
+      Top = 209
       Width = 121
       Height = 21
       TabOrder = 2
+      OnChange = Edit3Change
     end
-  end
-  object Button1: TButton
-    Left = 335
-    Top = 152
-    Width = 25
-    Height = 25
-    TabOrder = 2
-  end
-  object Button2: TButton
-    Left = 366
-    Top = 152
-    Width = 25
-    Height = 25
-    TabOrder = 3
-  end
-  object Button3: TButton
-    Left = 397
-    Top = 152
-    Width = 25
-    Height = 25
-    TabOrder = 4
-  end
-  object Button4: TButton
-    Left = 428
-    Top = 152
-    Width = 25
-    Height = 25
-    TabOrder = 5
-  end
-  object Button5: TButton
-    Left = 459
-    Top = 152
-    Width = 25
-    Height = 25
-    TabOrder = 6
-  end
-  object Button6: TButton
-    Left = 490
-    Top = 152
-    Width = 25
-    Height = 25
-    TabOrder = 7
+    object Panel3: TPanel
+      Left = 16
+      Top = 104
+      Width = 25
+      Height = 28
+      BorderWidth = 5
+      BorderStyle = bsSingle
+      Color = clNavy
+      Enabled = False
+      ParentBackground = False
+      TabOrder = 3
+    end
+    object Button1: TButton
+      Left = 16
+      Top = 256
+      Width = 75
+      Height = 25
+      Caption = 'Save'
+      TabOrder = 4
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 136
+      Top = 256
+      Width = 75
+      Height = 25
+      Caption = 'Cancel'
+      TabOrder = 5
+    end
   end
 end

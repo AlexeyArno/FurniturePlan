@@ -3,10 +3,9 @@
 #include <vcl.h>
 #pragma hdrstop
 
-#include "Unit1.h"
-#include "Furniture.h"
-#include "DrawFurniture.h"
-#include "Wall.h"
+#include "Main.h"
+#include "Draw.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -22,7 +21,7 @@ DrawFurniture * cDrawFurniture;
 
 void CreateDefaultFurniture();
 void loadMenu();
-void drawNet();
+//void drawNet();
 void drawWalls();
 void drawPanelSubject();
 void drawFurniture();
@@ -76,30 +75,26 @@ void CreateDefaultFurniture(){
 
 }
 
-void drawAll(){
+__fastcall TForm1::drawAll(){
 	Form1->Image1->Repaint();
-	drawNet();
+	drawNet(430,640,scale,Form1->Image1->Canvas);
 	drawWalls();
 	drawFurniture();
 	drawPanelSubject();
 }
 
 void __fastcall clickMenu(TMenuItem* Sender) {
-//	TMenuItem* It = (TMenuItem*)&Sender;
-//	ShowMessage(It);
-//	ShowMessage(Sender->Caption.SubString(2,Sender->Caption.Length()-1));
+
 	for(int i=0;i<10;i++){
 		if(fList[i]){
 			if(fList[i]->Name().c_str() == Sender->Caption.SubString(2,Sender->Caption.Length()-1)){
-				wchar_t* name(InputBox("Name","Name of furniture" ,fList[i]->Name().c_str()).c_str());
-				std::wstring ws(name);
-				std::string str(ws.begin(), ws.end());
+
 
 				cDrawFurniture = new DrawFurniture(*fList[i],
 												   countCurrentDrawFurniture,
-												   str);
+												   InputBox("Name","Name of furniture" ,fList[i]->Name().c_str()));
 				cFurniture[countCurrentDrawFurniture++] = cDrawFurniture;
-				drawAll();
+				Form1->drawAll();
 				return;
 
 			}
@@ -122,14 +117,6 @@ void loadMenu(){
 	}
 }
 
-void drawNet(){
-
-	for(int j=5;j<430;j+=scale){
-		for(int i=5;i<640;i+=scale){
-			Form1->Image1->Canvas->Rectangle(i,j,i+scale,j+scale);
-		}
-	}
-}
 
 void drawWalls(){
 	//draw walls
@@ -204,7 +191,7 @@ void __fastcall TForm1::Button7Click(TObject *Sender)
 		 if(cFurniture[i]->id == cDrawFurniture->id){
 			cFurniture[i] = NULL;
 			cDrawFurniture = NULL;
-			drawAll();
+			Form1->drawAll();
 			return;
 		 }
 	}
@@ -218,7 +205,7 @@ void __fastcall TForm1::ListBox1Click(TObject *Sender)
 		 if(cFurniture[i] != NULL){
 			if(cFurniture[i]->custom_name.c_str() == cName){
 				cDrawFurniture = cFurniture[i];
-				drawAll();
+				Form1->drawAll();
 				return;
 			}
 		 }
@@ -228,7 +215,10 @@ void __fastcall TForm1::ListBox1Click(TObject *Sender)
 
 void __fastcall TForm1::ListBox1DblClick(TObject *Sender)
 {
-	ShowMessage("Hello");
+
+	Form2->InitFurniture(cDrawFurniture);
+	Form2->Show();
+
 }
 //---------------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef Unit1H
-#define Unit1H
+#ifndef MainH
+#define MainH
 //---------------------------------------------------------------------------
 #include <Classes.hpp>
 #include <Controls.hpp>
@@ -9,6 +9,12 @@
 #include <Forms.hpp>
 #include <Menus.hpp>
 #include <ExtCtrls.hpp>
+
+#include "Furniture.h"
+#include "DrawFurniture.h"
+#include "Wall.h"
+#include "ObjectProperties.h"
+
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -43,6 +49,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
+	__fastcall drawAll();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;

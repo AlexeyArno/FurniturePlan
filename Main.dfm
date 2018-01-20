@@ -120,7 +120,7 @@ object Form1: TForm1
       Caption = 'View'
     end
     object Image1: TImage
-      Left = 8
+      Left = 15
       Top = 40
       Width = 650
       Height = 450

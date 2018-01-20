@@ -10,12 +10,12 @@
 
 class DrawFurniture{
 	public:
-		std::string custom_name;
+		UnicodeString custom_name;
 		int id;
 		Point2D position;
 		int orientation;
 		Furniture origin;
-		DrawFurniture(Furniture*, int, std::string);
+		DrawFurniture(Furniture, int, UnicodeString);
 		void Draw(TCanvas*, int, bool);
 
 };
