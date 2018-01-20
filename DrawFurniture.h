@@ -6,7 +6,7 @@
 
 #include "Furniture.h"
 #include "Point.h"
-
+#include <vcl.h>
 
 class DrawFurniture{
 	public:
@@ -14,8 +14,9 @@ class DrawFurniture{
 		int id;
 		Point2D position;
 		int orientation;
-		Furniture* origin;
+		Furniture origin;
 		DrawFurniture(Furniture*, int, std::string);
+		void Draw(TCanvas*, int, bool);
 
 };
 //---------------------------------------------------------------------------

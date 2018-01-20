@@ -1,13 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.698,C:\Users\alex\Documents\RAD Studio\Projects\Unit1.dfm=D:\Projects\Мебель\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.698,C:\Users\alex\Documents\RAD Studio\Projects\Unit1.h=D:\Projects\Мебель\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.698,D:\Projects\Мебель\Unit1.cpp=C:\Users\alex\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.698,D:\Projects\Мебель\Unit1.dfm=C:\Users\alex\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.486,=D:\Projects\Мебель\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.717,D:\Projects\Мебель\Project1.cbproj=C:\Users\alex\Documents\RAD Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.351,=C:\Users\alex\Documents\RAD Studio\Projects\Project1.res</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.717,C:\Users\alex\Documents\RAD Studio\Projects\Project1.cbproj=D:\Projects\Мебель\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.102,=D:\Projects\Furniture\Unit2.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.376,=C:\Users\alex\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.698,C:\Users\alex\Documents\RAD Studio\Projects\Unit1.cpp=D:\Projects\Мебель\Unit1.cpp</Transaction>
-    <Transaction>2018.01.19 15:52:27.102,=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.698,D:\Projects\Мебель\Unit1.h=C:\Users\alex\Documents\RAD Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2018.01.19 18:27:13.504,D:\Projects\Furniture\Furniture.h=D:\Projects\Furniture\Unit2.h</Transaction>
+    <Transaction>2018.01.19 18:27:13.504,D:\Projects\Furniture\Furniture.cpp=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>2018.01.19 18:28:59.615,=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>2018.01.19 18:29:04.203,D:\Projects\Furniture\Wall.cpp=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>2018.01.19 18:29:04.203,D:\Projects\Furniture\Wall.h=D:\Projects\Furniture\Unit2.h</Transaction>
+    <Transaction>2018.01.19 18:29:44.005,=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>2018.01.19 18:29:49.201,D:\Projects\Furniture\Point.h=D:\Projects\Furniture\Unit2.h</Transaction>
+    <Transaction>2018.01.19 18:29:49.201,D:\Projects\Furniture\Point.cpp=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>2018.01.19 18:31:31.455,=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>2018.01.19 18:31:44.580,D:\Projects\Furniture\DrawFurniture.h=D:\Projects\Furniture\Unit2.h</Transaction>
+    <Transaction>2018.01.19 18:31:44.580,D:\Projects\Furniture\DrawFurniture.cpp=D:\Projects\Furniture\Unit2.cpp</Transaction>
   </Transactions>
 </BorlandProject>

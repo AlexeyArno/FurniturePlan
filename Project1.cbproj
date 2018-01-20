@@ -65,6 +65,18 @@
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
+			<CppCompile Include="DrawFurniture.cpp">
+				<DependentOn>DrawFurniture.h</DependentOn>
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Furniture.cpp">
+				<DependentOn>Furniture.h</DependentOn>
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Point.cpp">
+				<DependentOn>Point.h</DependentOn>
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
 			<CppCompile Include="Project1.cpp">
 				<BuildOrder>0</BuildOrder>
 			</CppCompile>
@@ -76,9 +88,9 @@
 				<DependentOn>Unit1.h</DependentOn>
 				<BuildOrder>2</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="Unit2.cpp">
-				<DependentOn>Unit2.h</DependentOn>
-				<BuildOrder>3</BuildOrder>
+			<CppCompile Include="Wall.cpp">
+				<DependentOn>Wall.h</DependentOn>
+				<BuildOrder>4</BuildOrder>
 			</CppCompile>
 			<FormResources Include="Unit1.dfm"/>
 			<BuildConfiguration Include="Release">

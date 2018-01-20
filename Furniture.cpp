@@ -7,7 +7,10 @@
 
 
 
-Furniture::Furniture(std::string newName):name(newName),width(0),height(0){
+Furniture::Furniture(std::string newName):name(newName),
+										  width(0),
+										  height(0),
+										  color(clMedGray){
 
 }
 

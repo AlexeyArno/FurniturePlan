@@ -23,8 +23,10 @@ DrawFurniture * cDrawFurniture;
 void CreateDefaultFurniture();
 void loadMenu();
 void drawNet();
-void drawAll();
+void drawWalls();
 void drawPanelSubject();
+void drawFurniture();
+void drawAll();
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -36,9 +38,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 	CreateDefaultFurniture();
-	drawNet();
-	drawAll();
 	loadMenu();
+	drawAll();
 
 }
 //---------------------------------------------------------------------------
@@ -75,6 +76,13 @@ void CreateDefaultFurniture(){
 
 }
 
+void drawAll(){
+	Form1->Image1->Repaint();
+	drawNet();
+	drawWalls();
+	drawFurniture();
+	drawPanelSubject();
+}
 
 void __fastcall clickMenu(TMenuItem* Sender) {
 //	TMenuItem* It = (TMenuItem*)&Sender;
@@ -87,11 +95,11 @@ void __fastcall clickMenu(TMenuItem* Sender) {
 				std::wstring ws(name);
 				std::string str(ws.begin(), ws.end());
 
-				cDrawFurniture = new DrawFurniture(fList[i],
+				cDrawFurniture = new DrawFurniture(*fList[i],
 												   countCurrentDrawFurniture,
 												   str);
 				cFurniture[countCurrentDrawFurniture++] = cDrawFurniture;
-				drawPanelSubject();
+				drawAll();
 				return;
 
 			}
@@ -123,8 +131,9 @@ void drawNet(){
 	}
 }
 
-void drawAll(){
+void drawWalls(){
 	//draw walls
+	TColor defColor = Form1->Image1->Canvas->Brush->Color;
 	Form1->Image1->Canvas->Brush->Color = clMedGray;
 	for(int i=0;i<20;i++){
 		if(cWalls[i]){
@@ -134,11 +143,30 @@ void drawAll(){
 											 5+scale*cWalls[i]->end.y);
 		}
 	}
+	Form1->Image1->Canvas->Brush->Color = defColor;
 
 }
 
-void drawPanelSubject(){
+void drawFurniture(){
 
+		for(int i=0;i<20;i++){
+			if(cFurniture[i]){
+				if(cDrawFurniture){
+					if(cFurniture[i]->id == cDrawFurniture->id){
+						continue;
+					}
+				}
+				cFurniture[i]->Draw(Form1->Image1->Canvas,
+									scale,
+									false);
+			}
+		}
+		if(cDrawFurniture) cDrawFurniture->Draw(Form1->Image1->Canvas,
+							 scale,
+							 true);
+}
+
+void drawPanelSubject(){
 	Form1->ListBox1->Clear();
 //	draw current subject panel
 	if(cDrawFurniture){
@@ -147,11 +175,18 @@ void drawPanelSubject(){
 		Form1->Edit1->Text = "";
 	}
 //  draw curent subjects pannel
+	int count = 0;
 	for(int i=0;i<20;i++){
 		if(cFurniture[i]){
 			Form1->ListBox1->Items->Add(cFurniture[i]->custom_name.c_str());
+			if(!cDrawFurniture){continue;};
+			if(cDrawFurniture->id == cFurniture[i]->id){
+				Form1->ListBox1->ItemIndex = count;
+			}
+			count++;
 		}
 	}
+
 }
 
 
@@ -162,23 +197,38 @@ void drawPanelSubject(){
 
 void __fastcall TForm1::Button7Click(TObject *Sender)
 {
-//	ShowMessage(Form1->ListBox1->Items[Form1->ListBox1->ItemIndex-1][0]);
+	UnicodeString cName = Form1->ListBox1->Items->Strings[Form1->ListBox1->ItemIndex];
+	if(!cDrawFurniture){return;};
+	for(int i=0;i<20;i++){
+		 if(!cFurniture[i]){continue;};
+		 if(cFurniture[i]->id == cDrawFurniture->id){
+			cFurniture[i] = NULL;
+			cDrawFurniture = NULL;
+			drawAll();
+			return;
+		 }
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ListBox1Click(TObject *Sender)
+{
 	UnicodeString cName = Form1->ListBox1->Items->Strings[Form1->ListBox1->ItemIndex];
 	for(int i=0;i<20;i++){
 		 if(cFurniture[i] != NULL){
 			if(cFurniture[i]->custom_name.c_str() == cName){
-				if(cDrawFurniture){
-                 	if(cDrawFurniture->id == cFurniture[i]->id){
-						cDrawFurniture = NULL;
-					}
-				}
-				cFurniture[i] = NULL;
-
-				drawPanelSubject();
+				cDrawFurniture = cFurniture[i];
+				drawAll();
 				return;
 			}
 		 }
 	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ListBox1DblClick(TObject *Sender)
+{
+	ShowMessage("Hello");
 }
 //---------------------------------------------------------------------------
 
