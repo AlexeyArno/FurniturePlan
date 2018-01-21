@@ -134,6 +134,7 @@ object Form2: TForm2
       Height = 25
       Caption = 'Cancel'
       TabOrder = 5
+      OnClick = Button2Click
     end
   end
 end

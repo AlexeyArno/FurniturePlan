@@ -14,6 +14,7 @@ TForm2 *Form2;
 DrawFurniture* COFurniture;
 DrawFurniture* cFurniture;
 TPanel* buttons[6];
+bool change;
 
 void createColorButtons();
 
@@ -23,11 +24,18 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
-__fastcall TForm2::InitFurniture(DrawFurniture * furn){
+__fastcall TForm2::InitFurniture(DrawFurniture * furn, bool _change){
+	change = _change;
+	if(_change){
+		Form2->Caption = "Object Change";
+	}else{
+		Form2->Caption = "New Object";
+	}
 	COFurniture = furn;
 	cFurniture = new DrawFurniture(*furn);
 	cFurniture->position.x = 0;
 	cFurniture->position.y = 0;
+	cFurniture->orientation = 0;
 	Form2->draw();
 
 }
@@ -80,8 +88,13 @@ void createColorButtons(){
 void __fastcall TForm2::Button1Click(TObject *Sender)
 {
 //	*COFurniture = *cFurniture;
-	COFurniture->origin = cFurniture->origin;
-	COFurniture->custom_name = cFurniture->custom_name;
+	if(change){
+		COFurniture->origin = cFurniture->origin;
+		COFurniture->custom_name = cFurniture->custom_name;
+	}else{
+		Form1->addObject(cFurniture);
+	}
+
 	Form2->Hide();
 	Form1->drawAll();
 }
@@ -110,6 +123,12 @@ void __fastcall TForm2::Edit3Change(TObject *Sender)
 		cFurniture->origin.height = (size>10)?10:size;
 		Form2->draw();
 	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Button2Click(TObject *Sender)
+{
+	Form2->Hide();
 }
 //---------------------------------------------------------------------------
 

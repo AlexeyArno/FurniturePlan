@@ -17,6 +17,8 @@ class DrawFurniture{
 		Furniture origin;
 		DrawFurniture(Furniture, int, UnicodeString);
 		void Draw(TCanvas*, int, bool);
+		bool setOrientation(int, int,int);
+		int* getExtremePoints();
 
 };
 //---------------------------------------------------------------------------

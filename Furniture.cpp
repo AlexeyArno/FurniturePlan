@@ -7,7 +7,7 @@
 
 
 
-Furniture::Furniture(std::string newName):name(newName),
+Furniture::Furniture(UnicodeString newName):name(newName),
 										  width(0),
 										  height(0),
 										  color(clMedGray){
@@ -15,7 +15,7 @@ Furniture::Furniture(std::string newName):name(newName),
 }
 
 
-std::string Furniture::Name() const{
+UnicodeString Furniture::Name() const{
 	return name;
 }
 

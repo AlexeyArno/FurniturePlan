@@ -34,11 +34,12 @@ __published:	// IDE-managed Components
 	void __fastcall Edit1Change(TObject *Sender);
 	void __fastcall Edit2Change(TObject *Sender);
 	void __fastcall Edit3Change(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
 	__fastcall draw();
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
-	__fastcall InitFurniture(DrawFurniture *);
+	__fastcall InitFurniture(DrawFurniture *, bool);
 	friend	void colorClick(TObject* Sender);
 
 };

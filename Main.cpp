@@ -15,6 +15,7 @@ DrawFurniture* cFurniture[20];
 Wall * cWalls[20];
 int scale = 20;
 int countCurrentDrawFurniture;
+int countFList=2;
 DrawFurniture * cDrawFurniture;
 
 
@@ -26,6 +27,7 @@ void drawWalls();
 void drawPanelSubject();
 void drawFurniture();
 void drawAll();
+void newFurniture();
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -76,7 +78,8 @@ void CreateDefaultFurniture(){
 }
 
 __fastcall TForm1::drawAll(){
-	Form1->Image1->Repaint();
+//	Form1->Image1->Repaint();
+	Form1->Image1->Refresh();
 	drawNet(430,640,scale,Form1->Image1->Canvas);
 	drawWalls();
 	drawFurniture();
@@ -104,6 +107,20 @@ void __fastcall clickMenu(TMenuItem* Sender) {
 }
 
 void loadMenu(){
+	Form1->MainMenu1->Items[0].Items[0]->Clear();
+
+   	TMenuItem *It = new TMenuItem(Form1->MainMenu1);
+	It->Caption = "-";
+	Form1->MainMenu1->Items[0].Items[0]->Insert(0,It);
+
+	It = new TMenuItem(Form1->MainMenu1);
+	It->Caption = "+ New";
+	TMethod Method;
+	Method.Data = It;
+	Method.Code = newFurniture;
+	It->OnClick =  *(TNotifyEvent*)&Method;
+	Form1->MainMenu1->Items[0].Items[0]->Insert(1,It);
+
 	for(int i=0;i<10;i++){
 		if(fList[i]){
 			TMenuItem *It = new TMenuItem(Form1->MainMenu1);
@@ -115,6 +132,7 @@ void loadMenu(){
 			Form1->MainMenu1->Items[0].Items[0]->Insert(0,It);
 		}
 	}
+
 }
 
 
@@ -216,9 +234,105 @@ void __fastcall TForm1::ListBox1Click(TObject *Sender)
 void __fastcall TForm1::ListBox1DblClick(TObject *Sender)
 {
 
-	Form2->InitFurniture(cDrawFurniture);
+	Form2->InitFurniture(cDrawFurniture,true);
 	Form2->Show();
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+	if(cDrawFurniture){
+		cDrawFurniture->position.y--;
+		int* result = cDrawFurniture->getExtremePoints();
+		if(cDrawFurniture->getExtremePoints()[1]<1
+			|| cDrawFurniture->getExtremePoints()[3]<1){
+			cDrawFurniture->position.y++;
+			return;
+		}
+		Form1->drawAll();
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	if(cDrawFurniture){
+		cDrawFurniture->position.y++;
+		int* result = cDrawFurniture->getExtremePoints();
+		if(result[1]>=int(430/scale)+1 || result[3]>=int(430/scale)+1){
+				cDrawFurniture->position.y--;
+				return;
+			}
+		Form1->drawAll();
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	if(cDrawFurniture){
+		cDrawFurniture->position.x++;
+		int* result = cDrawFurniture->getExtremePoints();
+		if(result[0]>=int(640/scale) || result[2]>=int(640/scale)){
+				cDrawFurniture->position.x--;
+				return;
+			}
+
+		Form1->drawAll();
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	if(cDrawFurniture){
+		cDrawFurniture->position.x--;
+		int* result = cDrawFurniture->getExtremePoints();
+		if(result[0]<1 || result[2]<1){
+				cDrawFurniture->position.x++;
+				return;
+		}
+		Form1->drawAll();
+	}
+}
+//---------------------------------------------------------------------------
+
+__fastcall TForm1::addObject(DrawFurniture* newFurniture){
+	fList[++countFList] = &newFurniture->origin;
+	newFurniture->position.x++;
+    newFurniture->position.y++;
+	cFurniture[countCurrentDrawFurniture] = newFurniture;
+	cDrawFurniture = cFurniture[countCurrentDrawFurniture];
+	loadMenu();
+
+}
+
+void newFurniture(){
+	Furniture* nFurniture = new Furniture(InputBox("New Furniture","Name of new furniture",""));
+	DrawFurniture* CNDFurniture = new DrawFurniture(*nFurniture,
+										-1,
+										nFurniture->Name());
+	Form2->InitFurniture(CNDFurniture, false);
+	Form2->Show();
+}
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+	if(cDrawFurniture){
+		if(cDrawFurniture->setOrientation(((cDrawFurniture->orientation<3)?
+										cDrawFurniture->orientation+1:
+										0), int(630/20), int(430/20)))Form1->drawAll();
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button5Click(TObject *Sender)
+{
+	if(cDrawFurniture){
+		if(cDrawFurniture->setOrientation(((cDrawFurniture->orientation>0)?
+										cDrawFurniture->orientation-1:
+										3),int(630/20), int(430/20)))Form1->drawAll();
+	}
 }
 //---------------------------------------------------------------------------
 

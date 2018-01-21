@@ -50,6 +50,7 @@ object Form1: TForm1
       Height = 25
       Caption = #9204
       TabOrder = 1
+      OnClick = Button1Click
     end
     object Button2: TButton
       Left = 82
@@ -58,6 +59,7 @@ object Form1: TForm1
       Height = 25
       Caption = #9207
       TabOrder = 2
+      OnClick = Button2Click
     end
     object Button3: TButton
       Left = 155
@@ -66,6 +68,7 @@ object Form1: TForm1
       Height = 25
       Caption = #9205
       TabOrder = 3
+      OnClick = Button3Click
     end
     object Button4: TButton
       Left = 82
@@ -74,22 +77,25 @@ object Form1: TForm1
       Height = 25
       Caption = #9206
       TabOrder = 4
+      OnClick = Button4Click
     end
     object Button5: TButton
-      Left = 9
+      Left = 155
       Top = 85
       Width = 74
       Height = 25
-      Caption = 'Rotate Left'
+      Caption = 'Rotate Right'
       TabOrder = 5
+      OnClick = Button5Click
     end
     object Button6: TButton
-      Left = 155
+      Left = 9
       Top = 85
       Width = 75
       Height = 25
-      Caption = 'Rotate Right'
+      Caption = 'Rotate Left'
       TabOrder = 6
+      OnClick = Button6Click
     end
   end
   object Panel3: TPanel
@@ -120,8 +126,8 @@ object Form1: TForm1
       Caption = 'View'
     end
     object Image1: TImage
-      Left = 15
-      Top = 40
+      Left = 6
+      Top = 33
       Width = 650
       Height = 450
     end

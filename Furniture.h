@@ -7,13 +7,13 @@
 #include <vcl.h>
 
 class Furniture{
-	std::string name;
+	UnicodeString name;
 	public:
 		TColor color;
 		int width;
 		int height;
-		Furniture(std::string);
-		std::string Name() const;
+		Furniture(UnicodeString);
+		UnicodeString Name() const;
 };
 
 //---------------------------------------------------------------------------
