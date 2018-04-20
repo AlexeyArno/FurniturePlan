@@ -31,10 +31,7 @@ __published:	// IDE-managed Components
 	TLabel *Label1;
 	TPanel *Panel2;
 	TLabel *Label2;
-	TPanel *Panel3;
-	TLabel *Label4;
 	TPanel *Panel1;
-	TLabel *Label3;
 	TImage *Image1;
 	TMenuItem *N2;
 	TMenuItem *New1;
@@ -42,6 +39,7 @@ __published:	// IDE-managed Components
 	TListBox *ListBox1;
 	TLabel *Label5;
 	TButton *Button7;
+	TLabel *Label3;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Button7Click(TObject *Sender);
 	void __fastcall ListBox1Click(TObject *Sender);

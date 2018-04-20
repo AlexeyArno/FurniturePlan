@@ -1,10 +1,14 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Furniture Plan'
-  ClientHeight = 518
-  ClientWidth = 923
+  Caption = #1052#1077#1073#1077#1083#1100
+  ClientHeight = 491
+  ClientWidth = 924
   Color = clBtnFace
+  Constraints.MaxHeight = 550
+  Constraints.MaxWidth = 940
+  Constraints.MinHeight = 550
+  Constraints.MinWidth = 940
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -19,21 +23,21 @@ object Form1: TForm1
     Left = 679
     Top = 8
     Width = 236
-    Height = 153
+    Height = 145
     TabOrder = 0
     object Label1: TLabel
       Left = 12
       Top = 40
-      Width = 27
+      Width = 19
       Height = 13
-      Caption = 'Name'
+      Caption = #1048#1084#1103
     end
     object Label2: TLabel
       Left = 16
       Top = 8
-      Width = 76
+      Width = 87
       Height = 13
-      Caption = 'Current Subject'
+      Caption = #1058#1077#1082#1091#1097#1080#1081' '#1054#1073#1098#1077#1082#1090
     end
     object Edit1: TEdit
       Left = 93
@@ -84,7 +88,7 @@ object Form1: TForm1
       Top = 85
       Width = 74
       Height = 25
-      Caption = 'Rotate Right'
+      Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1100
       TabOrder = 5
       OnClick = Button5Click
     end
@@ -93,63 +97,48 @@ object Form1: TForm1
       Top = 85
       Width = 75
       Height = 25
-      Caption = 'Rotate Left'
+      Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1100
       TabOrder = 6
       OnClick = Button6Click
-    end
-  end
-  object Panel3: TPanel
-    Left = 679
-    Top = 167
-    Width = 236
-    Height = 134
-    TabOrder = 1
-    object Label4: TLabel
-      Left = 16
-      Top = 16
-      Width = 64
-      Height = 13
-      Caption = 'Control Panel'
     end
   end
   object Panel1: TPanel
     Left = 8
     Top = 8
     Width = 665
-    Height = 502
-    TabOrder = 2
+    Height = 481
+    TabOrder = 1
+    object Image1: TImage
+      Left = 0
+      Top = 8
+      Width = 650
+      Height = 465
+    end
     object Label3: TLabel
       Left = 8
       Top = 8
-      Width = 22
+      Width = 3
       Height = 13
-      Caption = 'View'
-    end
-    object Image1: TImage
-      Left = 6
-      Top = 33
-      Width = 650
-      Height = 450
     end
   end
   object Panel4: TPanel
     Left = 679
-    Top = 307
+    Top = 159
     Width = 236
-    Height = 203
-    TabOrder = 3
+    Height = 324
+    TabOrder = 2
     object Label5: TLabel
       Left = 16
       Top = 16
-      Width = 81
+      Width = 47
       Height = 13
-      Caption = 'Drawed Subjects'
+      Caption = #1054#1073#1098#1077#1082#1090#1099
     end
     object ListBox1: TListBox
       Left = 9
-      Top = 56
+      Top = 39
       Width = 217
-      Height = 137
+      Height = 274
       ItemHeight = 13
       TabOrder = 0
       OnClick = ListBox1Click
@@ -160,7 +149,7 @@ object Form1: TForm1
       Top = 8
       Width = 75
       Height = 25
-      Caption = 'Delete'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
       TabOrder = 1
       OnClick = Button7Click
     end
@@ -169,7 +158,7 @@ object Form1: TForm1
     Left = 880
     Top = 472
     object N1: TMenuItem
-      Caption = 'Furniture'
+      Caption = #1052#1077#1073#1077#1083#1100
       object N2: TMenuItem
         Caption = '-'
       end

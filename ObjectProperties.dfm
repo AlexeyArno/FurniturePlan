@@ -1,10 +1,14 @@
 object Form2: TForm2
   Left = 0
   Top = 0
-  Caption = 'Object Change'
-  ClientHeight = 310
+  Caption = #1048#1079#1084#1077#1085#1077#1085#1080#1077' '#1086#1073#1098#1077#1082#1090#1072
+  ClientHeight = 301
   ClientWidth = 554
   Color = clBtnFace
+  Constraints.MaxHeight = 340
+  Constraints.MaxWidth = 570
+  Constraints.MinHeight = 340
+  Constraints.MinWidth = 570
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -19,13 +23,6 @@ object Form2: TForm2
     Width = 305
     Height = 294
     TabOrder = 0
-    object Label1: TLabel
-      Left = 8
-      Top = 8
-      Width = 22
-      Height = 13
-      Caption = 'View'
-    end
     object Image1: TImage
       Left = 8
       Top = 27
@@ -40,47 +37,40 @@ object Form2: TForm2
     Height = 294
     BorderWidth = 5
     TabOrder = 1
-    object Label2: TLabel
-      Left = 16
-      Top = 8
-      Width = 35
-      Height = 13
-      Caption = 'Control'
-    end
     object Label3: TLabel
       Left = 16
       Top = 36
-      Width = 31
+      Width = 23
       Height = 13
-      Caption = 'Name:'
+      Caption = #1048#1084#1103':'
     end
     object Label4: TLabel
       Left = 16
       Top = 72
-      Width = 29
+      Width = 30
       Height = 13
-      Caption = 'Color:'
+      Caption = #1062#1074#1077#1090':'
     end
     object Label5: TLabel
       Left = 16
       Top = 144
       Width = 55
       Height = 13
-      Caption = 'Proportions'
+      Caption = #1055#1088#1086#1087#1086#1088#1094#1080#1080
     end
     object Label6: TLabel
       Left = 16
       Top = 172
-      Width = 32
+      Width = 44
       Height = 13
-      Caption = 'Width:'
+      Caption = #1064#1080#1088#1080#1085#1072':'
     end
     object Label7: TLabel
       Left = 16
       Top = 212
-      Width = 35
+      Width = 36
       Height = 13
-      Caption = 'Height:'
+      Caption = #1044#1083#1080#1085#1072':'
     end
     object Edit1: TEdit
       Left = 88
@@ -123,7 +113,7 @@ object Form2: TForm2
       Top = 256
       Width = 75
       Height = 25
-      Caption = 'Save'
+      Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
       TabOrder = 4
       OnClick = Button1Click
     end
@@ -132,7 +122,7 @@ object Form2: TForm2
       Top = 256
       Width = 75
       Height = 25
-      Caption = 'Cancel'
+      Caption = #1054#1090#1084#1077#1085#1072
       TabOrder = 5
       OnClick = Button2Click
     end

@@ -46,15 +46,15 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 //---------------------------------------------------------------------------
 
 void CreateDefaultFurniture(){
-	fList[0] = new Furniture("Sofa");
+	fList[0] = new Furniture("Кресло");
 	fList[0]->width = 1;
 	fList[0]->height = 2;
 
-	fList[1] =new Furniture("Bed");
+	fList[1] =new Furniture("Кровать");
 	fList[1]->width = 2;
 	fList[1]->height = 3;
 
-	fList[2] =new Furniture("Table");
+	fList[2] =new Furniture("Стол");
 	fList[2]->width = 2;
 	fList[2]->height =1;
 
@@ -90,7 +90,7 @@ void __fastcall clickMenu(TMenuItem* Sender) {
 
 	for(int i=0;i<10;i++){
 		if(fList[i]){
-			if(fList[i]->Name().c_str() == Sender->Caption.SubString(2,Sender->Caption.Length()-1)){
+			if(fList[i]->Name().c_str() == Sender->Caption){
 
 
 				cDrawFurniture = new DrawFurniture(*fList[i],
@@ -113,13 +113,13 @@ void loadMenu(){
 	It->Caption = "-";
 	Form1->MainMenu1->Items[0].Items[0]->Insert(0,It);
 
-	It = new TMenuItem(Form1->MainMenu1);
-	It->Caption = "+ New";
-	TMethod Method;
-	Method.Data = It;
-	Method.Code = newFurniture;
-	It->OnClick =  *(TNotifyEvent*)&Method;
-	Form1->MainMenu1->Items[0].Items[0]->Insert(1,It);
+//	It = new TMenuItem(Form1->MainMenu1);
+//	It->Caption = "+ New";
+//	TMethod Method;
+//	Method.Data = It;
+//	Method.Code = newFurniture;
+//	It->OnClick =  *(TNotifyEvent*)&Method;
+//	Form1->MainMenu1->Items[0].Items[0]->Insert(1,It);
 
 	for(int i=0;i<10;i++){
 		if(fList[i]){

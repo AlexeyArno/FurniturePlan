@@ -118,7 +118,7 @@ int* DrawFurniture::getExtremePoints(){
 
 			break;
 	}
-	ShowMessage(IntToStr(result[0])+" "+IntToStr(result[1])+" "+IntToStr(result[2])+" "+IntToStr(result[3]));
+//	ShowMessage(IntToStr(result[0])+" "+IntToStr(result[1])+" "+IntToStr(result[2])+" "+IntToStr(result[3]));
 
 	return result;
 
