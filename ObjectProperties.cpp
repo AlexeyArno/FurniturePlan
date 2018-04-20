@@ -27,7 +27,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 __fastcall TForm2::InitFurniture(DrawFurniture * furn, bool _change){
 	change = _change;
 	if(_change){
-		Form2->Caption = "Object Change";
+		Form2->Caption = "Изменение объекта";
 	}else{
 		Form2->Caption = "New Object";
 	}
