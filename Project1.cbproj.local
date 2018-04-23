@@ -17,8 +17,8 @@
     <Transaction>1899.12.30 00:00:00.000.698,C:\Users\alex\Documents\RAD Studio\Projects\Unit1.dfm=D:\Projects\Мебель\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.608,D:\Projects\Furniture\Unit3.h=D:\Projects\Furniture\Draw.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.201,D:\Projects\Furniture\Unit2.cpp=D:\Projects\Furniture\Point.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.455,=D:\Projects\Furniture\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.005,=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.615,=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.190,=D:\Projects\Furniture\Unit2.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.580,D:\Projects\Furniture\Unit2.cpp=D:\Projects\Furniture\DrawFurniture.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.717,C:\Users\alex\Documents\RAD Studio\Projects\Project1.cbproj=D:\Projects\Мебель\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.504,D:\Projects\Furniture\Unit2.cpp=D:\Projects\Furniture\Furniture.cpp</Transaction>
@@ -28,7 +28,34 @@
     <Transaction>1899.12.30 00:00:00.000.486,=D:\Projects\Мебель\Unit2.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.196,D:\Projects\Furniture\Unit2.cpp=D:\Projects\Furniture\ObjectProperties.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.102,=D:\Projects\Furniture\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.615,=D:\Projects\Furniture\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.190,=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.455,=D:\Projects\Furniture\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.005,=D:\Projects\Furniture\Unit2.cpp</Transaction>
   </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Draw.cpp"/>
+    <File Path="Draw.cpp"/>
+    <File Path="Draw.h"/>
+    <File Path="DrawFurniture.cpp"/>
+    <File Path="DrawFurniture.cpp"/>
+    <File Path="DrawFurniture.h"/>
+    <File Path="Furniture.cpp"/>
+    <File Path="Furniture.cpp"/>
+    <File Path="Furniture.h"/>
+    <File Path="Main.cpp"/>
+    <File Path="Main.cpp"/>
+    <File Path="Main.dfm"/>
+    <File Path="Main.h"/>
+    <File Path="ObjectProperties.cpp"/>
+    <File Path="ObjectProperties.cpp"/>
+    <File Path="ObjectProperties.dfm"/>
+    <File Path="ObjectProperties.h"/>
+    <File Path="Point.cpp"/>
+    <File Path="Point.cpp"/>
+    <File Path="Point.h"/>
+    <File Path="Project1.cpp"/>
+    <File Path="Project1.res"/>
+    <File Path="Wall.cpp"/>
+    <File Path="Wall.cpp"/>
+    <File Path="Wall.h"/>
+  </ProjectSortOrder>
 </BorlandProject>

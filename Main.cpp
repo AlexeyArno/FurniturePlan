@@ -50,11 +50,11 @@ void CreateDefaultFurniture(){
 	fList[0]->width = 1;
 	fList[0]->height = 2;
 
-	fList[1] =new Furniture("Кровать");
+	fList[1] = new Furniture("Кровать");
 	fList[1]->width = 2;
 	fList[1]->height = 3;
 
-	fList[2] =new Furniture("Стол");
+	fList[2] = new Furniture("Стол");
 	fList[2]->width = 2;
 	fList[2]->height =1;
 
@@ -94,8 +94,8 @@ void __fastcall clickMenu(TMenuItem* Sender) {
 
 
 				cDrawFurniture = new DrawFurniture(*fList[i],
-												   countCurrentDrawFurniture,
-												   InputBox("Name","Name of furniture" ,fList[i]->Name().c_str()));
+					countCurrentDrawFurniture,
+					InputBox("Новый элемент","Имя" ,fList[i]->Name().c_str()));
 				cFurniture[countCurrentDrawFurniture++] = cDrawFurniture;
 				Form1->drawAll();
 				return;
@@ -309,7 +309,7 @@ __fastcall TForm1::addObject(DrawFurniture* newFurniture){
 }
 
 void newFurniture(){
-	Furniture* nFurniture = new Furniture(InputBox("New Furniture","Name of new furniture",""));
+	Furniture* nFurniture = new Furniture(InputBox("Новый элемент мебели","Имя",""));
 	DrawFurniture* CNDFurniture = new DrawFurniture(*nFurniture,
 										-1,
 										nFurniture->Name());
